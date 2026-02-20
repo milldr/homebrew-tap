@@ -3,7 +3,7 @@ cask "flow" do
   name "flow"
   desc "Multi-repo workspace manager using git worktrees"
   homepage "https://github.com/milldr/flow"
-  version "0.3.1"
+  version "0.3.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,18 +13,23 @@ cask "flow" do
 
   on_macos do
     url "https://github.com/milldr/flow/releases/download/v#{version}/flow_#{version}_darwin_all.tar.gz"
-    sha256 "4cb3b9ea6c851743245081e48c05fec5854e5563d68363806f17718065659bb7"
+    sha256 "6baa2fe4055f5708dd70fff90c6bc62f84cc8fd2b7320388adac1b80b1d630c3"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/milldr/flow/releases/download/v#{version}/flow_#{version}_linux_amd64.tar.gz"
-      sha256 "79c95d12162e153080f2da646e84f441140a5cbc9d691e24d21853ca5f19d1cc"
+      sha256 "eb45c880354b82e3941baa81041d96d74a692f1e16748d1453230eedc62027f6"
     end
     on_arm do
       url "https://github.com/milldr/flow/releases/download/v#{version}/flow_#{version}_linux_arm64.tar.gz"
-      sha256 "92f78259aa4d21dd31cfe5ea5e47459436d754b56af7c1792e823429c5513f6c"
+      sha256 "ecd64981b1505fd2536a52ac226c417e5869ec793671f729b9aab9591804639f"
     end
+  end
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{staged_path}"]
   end
 
   # No zap stanza required
