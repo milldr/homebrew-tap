@@ -3,7 +3,7 @@ cask "flow" do
   name "flow"
   desc "Multi-repo workspace manager using git worktrees"
   homepage "https://github.com/milldr/flow"
-  version "1.2.0"
+  version "1.3.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,17 +13,17 @@ cask "flow" do
 
   on_macos do
     url "https://github.com/milldr/flow/releases/download/v#{version}/flow_#{version}_darwin_all.tar.gz"
-    sha256 "5b591b890f0b9e6b8f9b2bba4a7e93faa2656bacca52bd1693938f5e0499d166"
+    sha256 "fd2567565c0c27b70f2855cf04fd9048f608d2d6556c50bac1a42520fbb4f27b"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/milldr/flow/releases/download/v#{version}/flow_#{version}_linux_amd64.tar.gz"
-      sha256 "c0be99bfe091354d4bbfb5264f86a67972961ad834a6104c2b25c5d7744e21b7"
+      sha256 "b2641878fc6edbb0a0693e9439dd844caeb9bbe95fa83a25b0e0b8a15fdf9722"
     end
     on_arm do
       url "https://github.com/milldr/flow/releases/download/v#{version}/flow_#{version}_linux_arm64.tar.gz"
-      sha256 "bd997910c50150d694dfccc9b425a554fab03043c2defc71cf70f5fa4fefc38d"
+      sha256 "89362d111b612837e8b8a7df3dec43bd544ee8ea5f4cda98410c4fcbaf6c7749"
     end
   end
 
